@@ -20,9 +20,31 @@ namespace PodGotovkaWPFAvtoSrvice
     /// </summary>
     public partial class MainWindow : Window
     {
+        test_tbEntities _context = new test_tbEntities();
         public MainWindow()
         {
             InitializeComponent();
+            ListProduct.ItemsSource = _context.Product.OrderBy(product => product.Title).ToList();
+        }
+
+        private void TxtFindendproduct_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void CmbMonufactureProduct_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ChbAtuale_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ChbAtuale_Unchecked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

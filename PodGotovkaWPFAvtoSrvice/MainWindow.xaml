@@ -3,10 +3,67 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PodGotovkaWPFAvtoSrvice"
+        xmlns:local="clr-namespace:PodGotovkaWPFAvtoSrvice" xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="550" Width="900" MinHeight="550" MinWidth="900">
+    <Window.Resources>
+        <sys:String x:Key="NullImage">
+            pack://application:,,,/Товары автосервиса/picture.png
+        </sys:String>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="назавние товара для поиска: " VerticalContentAlignment="Center" HorizontalAlignment="Right" ></Label>
+            <Label Grid.Row="1" Content="Производитель товара: " VerticalContentAlignment="Center" HorizontalContentAlignment="Right" ></Label>
+           
+            <TextBox Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Height="30" Width="300" Grid.Column="1" x:Name="TxtFindendproduct" TextChanged="TxtFindendproduct_TextChanged" ></TextBox>
+            <ComboBox Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Height="30" Width="300" Grid.Column="1" x:Name="CmbMonufactureProduct" SelectionChanged="CmbMonufactureProduct_SelectionChanged"></ComboBox>
+            <CheckBox Content="Актуальные товары" HorizontalAlignment="Left" Grid.Row="2" Height="30" Width="300" Grid.Column="1" VerticalAlignment="Center" x:Name="ChbAtuale" Checked="ChbAtuale_Checked" Unchecked="ChbAtuale_Unchecked"></CheckBox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ListView x:Name="ListProduct" HorizontalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel>
+                            
+                        </WrapPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1" BorderBrush="Black">
+                            <Grid Height="210" Width="260">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="5*"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Source="{Binding ImagePath,FallbackValue={StaticResource NullImage}}"></Image>
+                                <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Text="{Binding Title}"></TextBlock>
+                                <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FullVievCost}"></TextBlock>
+                                <TextBlock Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Status}" Foreground="{Binding ColorBrush}"></TextBlock>
+
+
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
     </Grid>
 </Window>

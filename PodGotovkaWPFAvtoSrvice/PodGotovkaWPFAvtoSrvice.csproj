@@ -35,8 +35,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +65,44 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Client.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientService.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentByService.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gender.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manufacturer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPhoto.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSale.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServicePhoto.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tag.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -69,6 +117,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -85,7 +143,16 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +160,223 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Товары автосервиса\D2508F32.jpg" />
+    <Resource Include="Товары автосервиса\D0D08F32.jpg" />
+    <Resource Include="Товары автосервиса\CC40C869.jpg" />
+    <Resource Include="Товары автосервиса\CC10C869.jpg" />
+    <Resource Include="Товары автосервиса\C9C0F036.jpg" />
+    <Resource Include="Товары автосервиса\C310B9F3.jpg" />
+    <Resource Include="Товары автосервиса\BD80E8D5.jpg" />
+    <Resource Include="Товары автосервиса\BA30C186.jpg" />
+    <Resource Include="Товары автосервиса\B790A6AA.jpg" />
+    <Resource Include="Товары автосервиса\B590AA7B.jpg" />
+    <Resource Include="Товары автосервиса\B0F0CB59.jpg" />
+    <Resource Include="Товары автосервиса\B0A0C186.jpg" />
+    <Resource Include="Товары автосервиса\AD00B713.jpg" />
+    <Resource Include="Товары автосервиса\9B3075EB.jpg" />
+    <Resource Include="Товары автосервиса\97809225.jpg" />
+    <Resource Include="Товары автосервиса\9750DA76.jpg" />
+    <Resource Include="Товары автосервиса\96E0C1E7.jpg" />
+    <Resource Include="Товары автосервиса\9380C1E7.jpg" />
+    <Resource Include="Товары автосервиса\92C0C1E7.jpg" />
+    <Resource Include="Товары автосервиса\9290C1E7.jpg" />
+    <Resource Include="Товары автосервиса\90D0B807.jpg" />
+    <Resource Include="Товары автосервиса\90A0B807.jpg" />
+    <Resource Include="Товары автосервиса\90505D31.jpg" />
+    <Resource Include="Товары автосервиса\8FE07916.jpg" />
+    <Resource Include="Товары автосервиса\8F909ED7.jpg" />
+    <Resource Include="Товары автосервиса\8F609ED7.jpg" />
+    <Resource Include="Товары автосервиса\8E20A863.jpg" />
+    <Resource Include="Товары автосервиса\8BC0C1A9.jpg" />
+    <Resource Include="Товары автосервиса\85C04040.jpg" />
+    <Resource Include="Товары автосервиса\8430842A.jpg" />
+    <Resource Include="Товары автосервиса\7B70B9C6.jpg" />
+    <Resource Include="Товары автосервиса\6DD0A012.jpg" />
+    <Resource Include="Товары автосервиса\6DA0A012.jpg" />
+    <Resource Include="Товары автосервиса\6CE0A012.jpg" />
+    <Resource Include="Товары автосервиса\6CA0BE73.jpg" />
+    <Resource Include="Товары автосервиса\69C0CD62.jpg" />
+    <Resource Include="Товары автосервиса\6800BB8A.jpg" />
+    <Resource Include="Товары автосервиса\6730A31C.jpg" />
+    <Resource Include="Товары автосервиса\63C09E91.jpg" />
+    <Resource Include="Товары автосервиса\6080DCD5.jpg" />
+    <Resource Include="Товары автосервиса\5BE0C351.jpg" />
+    <Resource Include="Товары автосервиса\5BB0C351.jpg" />
+    <Resource Include="Товары автосервиса\5A30A7EE.jpg" />
+    <Resource Include="Товары автосервиса\59B0BE73.jpg" />
+    <Resource Include="Товары автосервиса\54B0795D.jpg" />
+    <Resource Include="Товары автосервиса\5250C855.jpg" />
+    <Resource Include="Товары автосервиса\5180B90E.jpg" />
+    <Resource Include="Товары автосервиса\47E07CB5.jpg" />
+    <Resource Include="Товары автосервиса\45908C52.jpg" />
+    <Resource Include="Товары автосервиса\45008C52.jpg" />
+    <Resource Include="Товары автосервиса\43E08C52.jpg" />
+    <Resource Include="Товары автосервиса\43C09176.jpg" />
+    <Resource Include="Товары автосервиса\43909176.jpg" />
+    <Resource Include="Товары автосервиса\40409946.jpg" />
+    <Resource Include="Товары автосервиса\3DF0E4BC.jpg" />
+    <Resource Include="Товары автосервиса\3DA0B713.jpg" />
+    <Resource Include="Товары автосервиса\3B70C57C.jpg" />
+    <Resource Include="Товары автосервиса\39D0C188.jpg" />
+    <Resource Include="Товары автосервиса\39A0C188.jpg" />
+    <Resource Include="Товары автосервиса\3970E753.jpg" />
+    <Resource Include="Товары автосервиса\3760D73F.jpg" />
+    <Resource Include="Товары автосервиса\30E0C751.jpg" />
+    <Resource Include="Товары автосервиса\2E60E06C.jpg" />
+    <Resource Include="Товары автосервиса\2E30E06C.jpg" />
+    <Resource Include="Товары автосервиса\2E00E06C.jpg" />
+    <Resource Include="Товары автосервиса\2D709062.jpg" />
+    <Resource Include="Товары автосервиса\2B609062.jpg" />
+    <Resource Include="Товары автосервиса\2B009062.jpg" />
+    <Resource Include="Товары автосервиса\2A109062.jpg" />
+    <Resource Include="Товары автосервиса\27B0C883.jpg" />
+    <Resource Include="Товары автосервиса\23F0848B.jpg" />
+    <Resource Include="Товары автосервиса\2390848B.jpg" />
+    <Resource Include="Товары автосервиса\23106A35.jpg" />
+    <Resource Include="Товары автосервиса\21B0E533.jpg" />
+    <Resource Include="Товары автосервиса\0DF0A8A4.jpg" />
+    <Resource Include="Товары автосервиса\0D60A8A4.jpg" />
+    <Resource Include="Товары автосервиса\0D30C4EE.jpg" />
+    <Resource Include="Товары автосервиса\03D096CB.jpg" />
+    <Resource Include="Товары автосервиса\022096CB.jpg" />
+    <Resource Include="Товары автосервиса\0070C563.jpg" />
+    <Resource Include="Товары автосервиса\FA90B138.jpg" />
+    <Resource Include="Товары автосервиса\F8E0B138.jpg" />
+    <Resource Include="Товары автосервиса\F490E078.jpg" />
+    <Resource Include="Товары автосервиса\F460E078.jpg" />
+    <Resource Include="Товары автосервиса\F310E078.jpg" />
+    <Resource Include="Товары автосервиса\F2E0E078.jpg" />
+    <Resource Include="Товары автосервиса\F2B0E078.jpg" />
+    <Resource Include="Товары автосервиса\F200BC2F.jpg" />
+    <Resource Include="Товары автосервиса\F160E078.jpg" />
+    <Resource Include="Товары автосервиса\EFC05011.jpg" />
+    <Resource Include="Товары автосервиса\EF80D790.jpg" />
+    <Resource Include="Товары автосервиса\E9308929.jpg" />
+    <Resource Include="Товары автосервиса\E5507A37.jpg" />
+    <Resource Include="Товары автосервиса\E3A0B18A.jpg" />
+    <Resource Include="Товары автосервиса\E320BB7C.jpg" />
+    <Resource Include="Товары автосервиса\E0D0E079.jpg" />
+    <Resource Include="Товары автосервиса\E0A0E079.jpg" />
+    <Resource Include="Товары автосервиса\DC70BEC3.jpg" />
+    <Resource Include="Товары автосервиса\D9605006.jpg" />
+    <Resource Include="Товары автосервиса\D4D0CE67.jpg" />
+    <Resource Include="Товары автосервиса\picture.png" />
+    <None Include="Resources\picture.png" />
+    <None Include="Resources\FA90B138.jpg" />
+    <None Include="Resources\F490E078.jpg" />
+    <None Include="Resources\F460E078.jpg" />
+    <None Include="Resources\F310E078.jpg" />
+    <None Include="Resources\F200BC2F.jpg" />
+    <None Include="Resources\F160E078.jpg" />
+    <None Include="Resources\F8E0B138.jpg" />
+    <None Include="Resources\F2E0E078.jpg" />
+    <None Include="Resources\F2B0E078.jpg" />
+    <None Include="Resources\EFC05011.jpg" />
+    <None Include="Resources\EF80D790.jpg" />
+    <None Include="Resources\E9308929.jpg" />
+    <None Include="Resources\E5507A37.jpg" />
+    <None Include="Resources\E320BB7C.jpg" />
+    <None Include="Resources\E3A0B18A.jpg" />
+    <None Include="Resources\E0D0E079.jpg" />
+    <None Include="Resources\E0A0E079.jpg" />
+    <None Include="Resources\DC70BEC3.jpg" />
+    <None Include="Resources\D9605006.jpg" />
+    <None Include="Resources\D2508F32.jpg" />
+    <None Include="Resources\D4D0CE67.jpg" />
+    <None Include="Resources\D0D08F32.jpg" />
+    <None Include="Resources\CC40C869.jpg" />
+    <None Include="Resources\CC10C869.jpg" />
+    <None Include="Resources\C310B9F3.jpg" />
+    <None Include="Resources\C9C0F036.jpg" />
+    <None Include="Resources\BD80E8D5.jpg" />
+    <None Include="Resources\BA30C186.jpg" />
+    <None Include="Resources\B790A6AA.jpg" />
+    <None Include="Resources\B590AA7B.jpg" />
+    <None Include="Resources\B0F0CB59.jpg" />
+    <None Include="Resources\B0A0C186.jpg" />
+    <None Include="Resources\AD00B713.jpg" />
+    <None Include="Resources\97809225.jpg" />
+    <None Include="Resources\43909176.jpg" />
+    <None Include="Resources\40409946.jpg" />
+    <None Include="Resources\8430842A.jpg" />
+    <None Include="Resources\2390848B.jpg" />
+    <None Include="Resources\90505D31.jpg" />
+    <None Include="Resources\45908C52.jpg" />
+    <None Include="Resources\45008C52.jpg" />
+    <None Include="Resources\23106A35.jpg" />
+    <None Include="Resources\022096CB.jpg" />
+    <None Include="Resources\9750DA76.jpg" />
+    <None Include="Resources\9380C1E7.jpg" />
+    <None Include="Resources\9290C1E7.jpg" />
+    <None Include="Resources\6800BB8A.jpg" />
+    <None Include="Resources\6730A31C.jpg" />
+    <None Include="Resources\6080DCD5.jpg" />
+    <None Include="Resources\5250C855.jpg" />
+    <None Include="Resources\5180B90E.jpg" />
+    <None Include="Resources\3970E753.jpg" />
+    <None Include="Resources\3760D73F.jpg" />
+    <None Include="Resources\96E0C1E7.jpg" />
+    <None Include="Resources\92C0C1E7.jpg" />
+    <None Include="Resources\90D0B807.jpg" />
+    <None Include="Resources\90A0B807.jpg" />
+    <None Include="Resources\85C04040.jpg" />
+    <None Include="Resources\0070C563.jpg" />
+    <None Include="Resources\69C0CD62.jpg" />
+    <None Include="Resources\63C09E91.jpg" />
+    <None Include="Resources\59B0BE73.jpg" />
+    <None Include="Resources\54B0795D.jpg" />
+    <None Include="Resources\47E07CB5.jpg" />
+    <None Include="Resources\43E08C52.jpg" />
+    <None Include="Resources\43C09176.jpg" />
+    <None Include="Resources\39D0C188.jpg" />
+    <None Include="Resources\39A0C188.jpg" />
+    <None Include="Resources\30E0C751.jpg" />
+    <None Include="Resources\27B0C883.jpg" />
+    <None Include="Resources\23F0848B.jpg" />
+    <None Include="Resources\21B0E533.jpg" />
+    <None Include="Resources\9B3075EB.jpg" />
+    <None Include="Resources\8FE07916.jpg" />
+    <None Include="Resources\8F909ED7.jpg" />
+    <None Include="Resources\8F609ED7.jpg" />
+    <None Include="Resources\8E20A863.jpg" />
+    <None Include="Resources\8BC0C1A9.jpg" />
+    <None Include="Resources\7B70B9C6.jpg" />
+    <None Include="Resources\6DD0A012.jpg" />
+    <None Include="Resources\6DA0A012.jpg" />
+    <None Include="Resources\6CE0A012.jpg" />
+    <None Include="Resources\6CA0BE73.jpg" />
+    <None Include="Resources\5BE0C351.jpg" />
+    <None Include="Resources\5BB0C351.jpg" />
+    <None Include="Resources\5A30A7EE.jpg" />
+    <None Include="Resources\3DF0E4BC.jpg" />
+    <None Include="Resources\3DA0B713.jpg" />
+    <None Include="Resources\3B70C57C.jpg" />
+    <None Include="Resources\03D096CB.jpg" />
+    <None Include="Resources\2E60E06C.jpg" />
+    <None Include="Resources\2E30E06C.jpg" />
+    <None Include="Resources\2E00E06C.jpg" />
+    <None Include="Resources\2D709062.jpg" />
+    <None Include="Resources\2B609062.jpg" />
+    <None Include="Resources\2B009062.jpg" />
+    <None Include="Resources\2A109062.jpg" />
+    <None Include="Resources\0DF0A8A4.jpg" />
+    <None Include="Resources\0D60A8A4.jpg" />
+    <None Include="Resources\0D30C4EE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
