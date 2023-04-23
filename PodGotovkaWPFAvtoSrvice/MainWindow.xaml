@@ -30,7 +30,7 @@
             <Label Grid.Row="1" Content="Производитель товара: " VerticalContentAlignment="Center" HorizontalContentAlignment="Right" ></Label>
            
             <TextBox Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Height="30" Width="300" Grid.Column="1" x:Name="TxtFindendproduct" TextChanged="TxtFindendproduct_TextChanged" ></TextBox>
-            <ComboBox Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Height="30" Width="300" Grid.Column="1" x:Name="CmbMonufactureProduct" SelectionChanged="CmbMonufactureProduct_SelectionChanged"></ComboBox>
+            <ComboBox Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Height="30" Width="300" Grid.Column="1" x:Name="CmbMonufactureProduct" SelectionChanged="CmbMonufactureProduct_SelectionChanged" DisplayMemberPath="Name" ></ComboBox>
             <CheckBox Content="Актуальные товары" HorizontalAlignment="Left" Grid.Row="2" Height="30" Width="300" Grid.Column="1" VerticalAlignment="Center" x:Name="ChbAtuale" Checked="ChbAtuale_Checked" Unchecked="ChbAtuale_Unchecked"></CheckBox>
         </Grid>
         <Grid Grid.Row="1">
@@ -56,8 +56,6 @@
                                 <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Text="{Binding Title}"></TextBlock>
                                 <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FullVievCost}"></TextBlock>
                                 <TextBlock Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Status}" Foreground="{Binding ColorBrush}"></TextBlock>
-
-
                             </Grid>
                         </Border>
                     </DataTemplate>

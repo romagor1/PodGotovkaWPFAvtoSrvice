@@ -44,7 +44,10 @@ namespace PodGotovkaWPFAvtoSrvice
         {
             get
             {
-                return Convert.ToString(this.Cost) + " рублей";
+                String a = Convert.ToString(this.Cost);
+                string[] subs = a.Split(',', ' ');
+                return subs[0] + " рублей";
+                //return Convert.ToString(this.Cost) + " рублей";
             }
         }
 
