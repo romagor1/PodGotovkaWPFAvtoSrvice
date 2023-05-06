@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PodGotovkaWPFAvtoSrvice" xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="900" MinHeight="550" MinWidth="900">
+        Title="Список Товаров" Height="550" Width="900" MinHeight="550" MinWidth="900">
     <Window.Resources>
         <sys:String x:Key="NullImage">
             pack://application:,,,/Товары автосервиса/picture.png
@@ -15,11 +15,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
+
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
@@ -62,6 +64,10 @@
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
-
+        <Grid Grid.Row="2">
+            <Button Width="200" Name="TovarTable"  Content="Список товара" Click="Button_Click">
+                
+            </Button>
+        </Grid>
     </Grid>
 </Window>

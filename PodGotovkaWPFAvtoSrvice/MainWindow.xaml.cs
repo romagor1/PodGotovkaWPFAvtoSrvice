@@ -93,5 +93,11 @@ namespace PodGotovkaWPFAvtoSrvice
             _product = _context.Product.OrderBy(p => p.Title).ToList();
             RefreshProduct();
         }
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+            Windows.ProductTable window = new Windows.ProductTable();
+            window.Show();
+        }
     }
 }
