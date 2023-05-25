@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PodGotovkaWPFAvtoSrvice.Windows"
         mc:Ignorable="d"
-          Title="Регистрация" Height="550" Width="900" MinHeight="550" MinWidth="900">
+        Title="Окно добавления продукта" Height="500" Width="400" MaxHeight="500" MaxWidth="400">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Content="Name" Grid.Row="1"></Label>
+        <Label Content="Login" Grid.Row="2"></Label>
+        <Label Content="Password" Grid.Row="3"></Label>
+        <TextBox x:Name="TxtNameUser" Grid.Row="1" Grid.Column="1"></TextBox>
+        <TextBox x:Name="TxtLoginUser" Grid.Row="2" Grid.Column="1"></TextBox>
+        <TextBox x:Name="TxtPasswordUser" Grid.Row="3" Grid.Column="1"></TextBox>
+
+        <Button Grid.ColumnSpan="2" Grid.Row="6" x:Name="AddNewUser" Content="Сохранить" Click="AddNewUser_Click"></Button>
     </Grid>
 </Window>
