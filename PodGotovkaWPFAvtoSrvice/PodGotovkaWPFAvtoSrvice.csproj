@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>service_logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -100,17 +103,41 @@
     <Compile Include="ServicePhoto.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Tag.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Windows\AddHotelWindows.xaml.cs">
       <DependentUpon>AddHotelWindows.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Avtorizacia.xaml.cs">
+      <DependentUpon>Avtorizacia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AvtorizationForAdmin.xaml.cs">
+      <DependentUpon>AvtorizationForAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BuyProductWindow.xaml.cs">
+      <DependentUpon>BuyProductWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\EditProductWindows.xaml.cs">
       <DependentUpon>EditProductWindows.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ProductTable.xaml.cs">
       <DependentUpon>ProductTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Registration.xaml.cs">
+      <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -128,11 +155,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\Avtorizacia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AvtorizationForAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BuyProductWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\EditProductWindows.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ProductTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Registration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +236,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="service_logo.ico" />
+    <Resource Include="Resources\service_logo.ico" />
+    <Resource Include="service_logo %281%29.png" />
+    <Resource Include="Resources\service_logo %281%29.png" />
     <Resource Include="Товары автосервиса\D2508F32.jpg" />
     <Resource Include="Товары автосервиса\D0D08F32.jpg" />
     <Resource Include="Товары автосервиса\CC40C869.jpg" />

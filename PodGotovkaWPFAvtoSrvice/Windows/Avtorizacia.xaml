@@ -1,0 +1,16 @@
+﻿<Window x:Class="PodGotovkaWPFAvtoSrvice.Windows.Avtorizacia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PodGotovkaWPFAvtoSrvice.Windows"
+        mc:Ignorable="d"
+          Title="авторизация" Height="550" Width="900" MinHeight="550" MinWidth="900">
+    <Grid Background="CadetBlue">
+        <Label Content="Авторизация" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="39" Width="104"/>
+        <TextBox x:Name="txtLoginBox" Background="White" HorizontalAlignment="Center" Height="40" Width="204" Text="Логин" Margin="0,150,0,0" ></TextBox>
+        <TextBox x:Name="txtPasswordBox" Background="White" HorizontalAlignment="Center" Height="40" Width="204" Text="Пароль" Margin="0,250,0,0"></TextBox>
+        <Button x:Name="BtnLoginUser" HorizontalAlignment="Left" Height="40" Width="204"  Margin="0,450,0,0" Content="Войти" Click="BtnLoginUser_Click"></Button>
+        <Button x:Name="BtnRegistrationUser" HorizontalAlignment="Right" Height="40" Width="204"  Margin="0,450,0,0" Content="Регистрация" Click="BtnRegistrationUser_Click"></Button>
+    </Grid>
+</Window>

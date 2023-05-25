@@ -22,7 +22,8 @@ namespace PodGotovkaWPFAvtoSrvice
     {
         private test_tbEntities _context = new test_tbEntities();
         private List<Product> _product = new List<Product>();
-        private string _SelectedManufacturer;
+		private List<User> _User = new List<User>();
+		private string _SelectedManufacturer;
         private string _FindendName;
         public MainWindow()
         {
@@ -96,8 +97,14 @@ namespace PodGotovkaWPFAvtoSrvice
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
-            Windows.ProductTable window = new Windows.ProductTable();
-            window.Show();
-        }
-    }
+			Windows.AvtorizationForAdmin window = new Windows.AvtorizationForAdmin();
+			window.Show();
+		}
+
+		private void BtnBuyProdust_Click(object sender, RoutedEventArgs e)
+		{
+			Windows.Avtorizacia window = new Windows.Avtorizacia();
+			window.Show();
+		}
+	}
 }

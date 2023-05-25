@@ -19,6 +19,7 @@ namespace PodGotovkaWPFAvtoSrvice
         {
             this.ClientService = new HashSet<ClientService>();
             this.Tag = new HashSet<Tag>();
+            this.User = new HashSet<User>();
         }
     
         public int ID { get; set; }
@@ -37,5 +38,7 @@ namespace PodGotovkaWPFAvtoSrvice
         public virtual ICollection<ClientService> ClientService { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tag> Tag { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> User { get; set; }
     }
 }

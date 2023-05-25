@@ -72,7 +72,7 @@ namespace PodGotovkaWPFAvtoSrvice.Windows
 
 		private void TxtPageNumber_TextChanged(object sender, TextChangedEventArgs e)
 		{
-			if(_currentPage > 0 && _currentPage < _maxPage && TxtPageNumber.Text != "")
+			if(_currentPage > 0 && _currentPage <= _maxPage && TxtPageNumber.Text != "")
 			{
 				_currentPage = Convert.ToInt32(TxtPageNumber.Text);
 			    RefreshProduct();

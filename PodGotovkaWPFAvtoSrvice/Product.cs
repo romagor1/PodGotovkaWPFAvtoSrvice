@@ -11,10 +11,10 @@ namespace PodGotovkaWPFAvtoSrvice
 {
     using System;
     using System.Collections.Generic;
-    using System.Windows.Media;
+	using System.Windows.Media;
 
-    public partial class Product
-    {
+	public partial class Product
+	{
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
@@ -32,56 +32,54 @@ namespace PodGotovkaWPFAvtoSrvice
         public bool IsActive { get; set; }
         public Nullable<int> ManufacturerID { get; set; }
 
-        public string ImagePath
-        {
-            get
-            {
-                return "/" + this.MainImagePath;
-            }
-        }
+		public string ImagePath
+		{
+			get
+			{
+				return "/" + this.MainImagePath;
+			}
+		}
 
-        public string FullVievCost
-        {
-            get
-            {
-                String a = Convert.ToString(this.Cost);
-                string[] subs = a.Split(',', ' ');
-                return subs[0] + " рублей";
-                //return Convert.ToString(this.Cost) + " рублей";
-            }
-        }
+		public string FullVievCost
+		{
+			get
+			{
+				String a = Convert.ToString(this.Cost);
+				string[] subs = a.Split(',', ' ');
+				return subs[0] + " рублей";
+			}
+		}
 
-        public string Status
-        {
-            get
-            {
-                if(this.IsActive)
-                {
-                    return "Актуален";
-                }
-                else
-                {
-                    return "Неактуален";
-                }
-            }
-        }
+		public string Status
+		{
+			get
+			{
+				if (this.IsActive)
+				{
+					return "Актуален";
+				}
+				else
+				{
+					return "Неактуален";
+				}
+			}
+		}
 
-        public SolidColorBrush ColorBrush
-        {
-            get
-            {
-                if (this.IsActive)
-                {
-                    return Brushes.Green;
-                }
-                else
-                {
-                    return Brushes.Red;
-                }
-            }
-        }
-
-        public virtual Manufacturer Manufacturer { get; set; }
+		public SolidColorBrush ColorBrush
+		{
+			get
+			{
+				if (this.IsActive)
+				{
+					return Brushes.Green;
+				}
+				else
+				{
+					return Brushes.Red;
+				}
+			}
+		}
+		public virtual Manufacturer Manufacturer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductPhoto> ProductPhoto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

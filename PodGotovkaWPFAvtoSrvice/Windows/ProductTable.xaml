@@ -6,6 +6,12 @@
         xmlns:local="clr-namespace:PodGotovkaWPFAvtoSrvice.Windows"
         mc:Ignorable="d"
         Title="Таблица Продкутов" Height="550" Width="900" MinHeight="550" MinWidth="900">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="PaginationBtn" >
+            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
@@ -31,12 +37,12 @@
         <WrapPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
             <StackPanel x:Name="PaginationPanel" Orientation="Horizontal">
 
-                <Button x:Name="GoFirstPAgeButton" Content="&lt;&lt;" Margin="0,0,20,0" FontSize="30" Click="GoFirstPAgeButton_Click"/>
-                <Button x:Name="GoPrevPAgeButton" Content="&lt;" Margin="0,0,20,0" FontSize="30" Click="GoPrevPAgeButton_Click"/>
+                <Button x:Name="GoFirstPAgeButton" Content="&lt;&lt;" Margin="0,0,20,0" FontSize="30" Click="GoFirstPAgeButton_Click" Style="{StaticResource PaginationBtn}"/>
+                <Button x:Name="GoPrevPAgeButton" Content="&lt;" Margin="0,0,20,0" FontSize="30" Click="GoPrevPAgeButton_Click" Style="{StaticResource PaginationBtn}"/>
                 <TextBox x:Name="TxtPageNumber" Width="50" TextChanged="TxtPageNumber_TextChanged" Margin="0,0,20,0" FontSize="30"/>
                 <Label x:Name="lblTotalPage" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,20,0" FontSize="30" />
-                <Button x:Name="GoNextPageButton" Content="&gt;" Margin="0,0,20,0" FontSize="30" Click="GoNextPageButton_Click"/>
-                <Button x:Name="GoLastPageButton" Content="&gt;&gt;" Margin="0,0,20,0" FontSize="30" Click="GoLastPageButton_Click"/>
+                <Button x:Name="GoNextPageButton" Content="&gt;" Margin="0,0,20,0" FontSize="30" Click="GoNextPageButton_Click" Style="{StaticResource PaginationBtn}"/>
+                <Button x:Name="GoLastPageButton" Content="&gt;&gt;" Margin="0,0,20,0" FontSize="30" Click="GoLastPageButton_Click" Style="{StaticResource PaginationBtn}"/>
             </StackPanel>
         </WrapPanel>
             <Button VerticalAlignment="Center" Click="BtnAddproduct_Click" FontSize="20" Grid.Row="1" x:Name="BtnAddproduct" Content="Добавить Продукт" HorizontalAlignment="Left"></Button>

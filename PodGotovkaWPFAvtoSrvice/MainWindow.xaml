@@ -28,6 +28,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
+            <Image Source="/service_logo (1).png" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Label Grid.Row="0" Content="назавние товара для поиска: " VerticalContentAlignment="Center" HorizontalAlignment="Right" ></Label>
             <Label Grid.Row="1" Content="Производитель товара: " VerticalContentAlignment="Center" HorizontalContentAlignment="Right" ></Label>
            
@@ -53,11 +54,13 @@
                                     <RowDefinition Height="Auto"></RowDefinition>
                                     <RowDefinition Height="Auto"></RowDefinition>
                                     <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
                                 </Grid.RowDefinitions>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Source="{Binding ImagePath,FallbackValue={StaticResource NullImage}}"></Image>
                                 <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Text="{Binding Title}"></TextBlock>
                                 <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FullVievCost}"></TextBlock>
                                 <TextBlock Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Status}" Foreground="{Binding ColorBrush}"></TextBlock>
+                                <Button Name="BtnBuyProdust" Click="BtnBuyProdust_Click" Content="Купить товара" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" ></Button>
                             </Grid>
                         </Border>
                     </DataTemplate>
